@@ -1,0 +1,150 @@
+<html>
+    <script type="text/javascript">
+        var myDate = new Date();
+        var int_day = myDate.getDay();
+        var int_month = myDate.getMonth();
+        var string_year = myDate.getFullYear();
+        
+        var weekday = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+        var string_month = months[int_month]
+        var string_day = weekday[int_day]
+
+        var suffix;
+        if (int_day === 1 || int_day === 21 || int_day === 31) {
+        suffix = 'st';
+        } else if (int_day === 2 || int_day === 22) {
+        suffix = 'nd';
+        } else if (int_day === 3 || int_day === 23) {
+        suffix = 'rd';
+        } else {
+        suffix = 'th';
+        }
+
+        var seconds = myDate.getSeconds();
+        var minutes = myDate.getMinutes();
+        var hours = myDate.getHours();
+
+        if (seconds < 10) {
+            seconds = '0' + seconds;
+        }
+        if (minutes < 10) {
+            minutes = '0' + minutes;
+        }
+        if (hours < 10) {
+            hours = '0' + hours;
+        }
+
+        var myTime = hours + ':' + minutes + ':' + seconds
+        var myDate = string_day + ', ' + string_month + ' ' + int_day + suffix + ', ' + string_year
+    </script>
+    <style>
+        @font-face  { font-family: SCP; src: url('assets/fonts/SourceCodePro-Medium.ttf')} 
+        .link-wrapper {
+            position:center;
+            margin-left:auto;
+            margin-right:auto;
+            padding: 6px;
+            display: grid;
+            gap: 10px;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            border-top: 1px solid #a9b1d6; 
+            border-bottom: 1px solid #a9b1d6;
+        }
+        .search { 
+            width: 100%; 
+            text-align: center; 
+            color: transparent; 
+            background-color: transparent;
+            font-family: SCP;
+            font-size: 14px;
+            text-shadow: 0 0 0 #a9b1d6; 
+            border: 0px solid #a9b1d6; 
+            outline: 0;
+        }
+        .outer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width:100%;
+            height:100%;
+        }
+        .inner {
+            justify-content: center;
+            text-align: center;
+            width: 600px;
+        }
+        a {
+            color: #a9b1d6;
+            text-decoration:none;
+        }
+        body {
+            height: 100%;
+            margin: 0;
+            background-color: #1a1b26;
+            color: #a9b1d6;
+            font-family: SCP;
+            font-size: 14px;
+        }
+        img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+
+    <body>
+        <div class="outer">
+			<div class="inner">
+                
+				<div style="width: 100%; display: flex; justify-content: space-between">
+                    <div><script type="text/javascript">document.write(myTime)</script></div>
+					<div><script type="text/javascript">document.write(myDate)</script></div>    
+				</div>
+
+                <div style="background-color: #24283b; border: 1px solid #a9b1d6;">
+
+                    <div>
+                        <img src="assets/pictures/picture.png">
+                    </div>
+    
+                    <div>
+                        <div class="link-wrapper">
+                            <div>
+                                <a href="http://example.com">example</a><br>
+                                <a href="http://example.com">example</a><br>
+                                <a href="http://example.com">example</a><br>
+                                <a href="http://example.com">example</a><br>
+                            </div>
+                            <div>
+                                <a href="http://example.com">example</a><br>
+                                <a href="http://example.com">example</a><br>
+                                <a href="http://example.com">example</a><br>
+                                <a href="http://example.com">example</a><br>
+                            </div>
+                            <div>
+                                <a href="http://example.com">example</a><br>
+                                <a href="http://example.com">example</a><br>
+                                <a href="http://example.com">example</a><br>
+                                <a href="http://example.com">example</a><br>
+                            </div>
+                            <div>
+                                <a href="http://example.com">example</a><br>
+                                <a href="http://example.com">example</a><br>
+                                <a href="http://example.com">example</a><br>
+                                <a href="http://example.com">example</a><br>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div>
+                        <form style="margin-bottom: 0px;" action="https://www.duckduckgo.com/?q">
+                            <input autocomplete="off" class="search" name="q" autofocus="autofocus" placeholder="search...">
+                        </form>
+                    </div>
+                    
+                </div>
+			</div>
+		</div>
+    </body>
+</html>
